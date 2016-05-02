@@ -1,4 +1,4 @@
-class GetSlackUsersController < ApplicationController
+class SlackPostMessageController < ApplicationController
 
   def index
     Slack.configure do |config|
@@ -10,7 +10,9 @@ class GetSlackUsersController < ApplicationController
 
     client.auth_test
 
-    client.chat_postMessage( channel: '#dev-test', text: 'Hello World!', as_user: true )
+    quote = QuoteApi.parse
+
+    client.chat_postMessage( channel: '#dev-test', text: 'QOTD - "' + quote + '"', as_user: true )
   end
 
 end

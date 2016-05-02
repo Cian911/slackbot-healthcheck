@@ -1,0 +1,2 @@
+module SlackPostMessageHelper
+end
