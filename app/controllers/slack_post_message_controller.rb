@@ -14,7 +14,6 @@ class SlackPostMessageController < ApplicationController
 
     # Check time for message
     time = Time.now.strftime("%H:%M").to_i
-    raise time.inspect
 
     if time === 9
       client.chat_postMessage( channel: '#dev-test', text: 'It\'s time to stretch! *Sitting is the new cancer*. Get up for a short walk! Go grab a coffe, tea or fuck it, grab a beer!' , as_user: true )
